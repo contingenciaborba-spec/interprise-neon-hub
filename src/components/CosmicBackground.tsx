@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import spaceBackground from '@/assets/space-background.png';
 
 const CosmicBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -74,11 +75,19 @@ const CosmicBackground = () => {
 
   return (
     <>
+      {/* Space Background Image */}
+      <div 
+        className="fixed inset-0 z-0 pointer-events-none bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${spaceBackground})` }}
+      />
+      
+      {/* Overlay gradient for better text readability */}
+      <div className="fixed inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background/80 pointer-events-none z-0" />
+      
       <canvas
         ref={canvasRef}
         className="fixed inset-0 pointer-events-none z-0"
       />
-      <div className="fixed inset-0 bg-gradient-to-b from-background via-background/95 to-background pointer-events-none z-0" />
       
       {/* Floating orbs */}
       <div className="fixed top-20 left-10 w-64 h-64 bg-primary/20 rounded-full blur-[100px] animate-cosmic-drift pointer-events-none z-0" />

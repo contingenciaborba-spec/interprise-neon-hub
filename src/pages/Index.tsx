@@ -5,7 +5,7 @@ import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import CosmicBackground from '@/components/CosmicBackground';
-import { Rocket } from 'lucide-react';
+import interpriseLogoAlt from '@/assets/interprise-logo-alt.png';
 
 const Index = () => {
   const [formData, setFormData] = useState({
@@ -54,10 +54,14 @@ const Index = () => {
       
       <div className="relative z-10 min-h-screen flex items-center justify-center p-4 md:p-8">
         <div className="w-full max-w-2xl animate-slide-in">
-          {/* Logo placeholder - will be replaced with uploaded logo */}
+          {/* INTERPRISE Logo */}
           <div className="flex justify-center mb-8">
             <div className="glass-effect neon-border rounded-2xl p-6 hover-glow">
-              <Rocket className="w-16 h-16 text-primary animate-pulse-glow" />
+              <img 
+                src={interpriseLogoAlt} 
+                alt="INTERPRISE Logo" 
+                className="w-32 h-auto md:w-40 animate-pulse-glow"
+              />
             </div>
           </div>
 
