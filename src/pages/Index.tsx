@@ -27,7 +27,7 @@ const Index = () => {
     
     try {
       // Send to webhook
-      await fetch('https://hook.us2.make.com/cccnmt7xxmio4h6bojo3vf3wvtlciccf', {
+      await fetch('https://manohappy23.app.n8n.cloud/webhook-test/3bc7fd47-dc88-4298-bb2d-4115887d2696', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
