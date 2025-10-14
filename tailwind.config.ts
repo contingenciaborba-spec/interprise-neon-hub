@@ -63,6 +63,10 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      fontFamily: {
+        orbitron: ['Orbitron', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
+      },
       keyframes: {
         "accordion-down": {
           from: {
@@ -80,10 +84,60 @@ export default {
             height: "0",
           },
         },
+        "float": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-20px)" },
+        },
+        "pulse-glow": {
+          "0%, 100%": { 
+            opacity: "1",
+            filter: "drop-shadow(0 0 20px hsl(270 100% 65% / 0.5))"
+          },
+          "50%": { 
+            opacity: "0.8",
+            filter: "drop-shadow(0 0 40px hsl(270 100% 65% / 0.8))"
+          },
+        },
+        "particle-float": {
+          "0%": { 
+            transform: "translate(0, 0) scale(1)",
+            opacity: "0"
+          },
+          "10%": {
+            opacity: "1"
+          },
+          "90%": {
+            opacity: "1"
+          },
+          "100%": { 
+            transform: "translate(100px, -100vh) scale(0)",
+            opacity: "0"
+          },
+        },
+        "slide-in": {
+          "0%": { 
+            opacity: "0",
+            transform: "translateY(20px)"
+          },
+          "100%": { 
+            opacity: "1",
+            transform: "translateY(0)"
+          },
+        },
+        "cosmic-drift": {
+          "0%, 100%": { transform: "translateX(0) translateY(0)" },
+          "33%": { transform: "translateX(100px) translateY(-50px)" },
+          "66%": { transform: "translateX(-50px) translateY(-100px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "float": "float 6s ease-in-out infinite",
+        "pulse-glow": "pulse-glow 3s ease-in-out infinite",
+        "particle-float": "particle-float 15s linear infinite",
+        "slide-in": "slide-in 0.5s ease-out",
+        "cosmic-drift": "cosmic-drift 20s ease-in-out infinite",
       },
     },
   },
