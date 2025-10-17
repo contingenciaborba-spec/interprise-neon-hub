@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -8,6 +9,7 @@ import CosmicBackground from '@/components/CosmicBackground';
 import interpriseLogoAlt from '@/assets/interprise-logo-alt.png';
 
 const Index = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     nome: '',
     whatsapp: '',
@@ -34,14 +36,12 @@ const Index = () => {
         },
         body: JSON.stringify(formData),
       });
-
-      // Redirect to WhatsApp
-      window.location.href = 'https://wa.me/558487149954?text=Olá%2C%20quero%20escalar%20minha%20operação%20com%20vocês%21';
     } catch (error) {
       console.error('Error submitting form:', error);
-      // Still redirect even if webhook fails
-      window.location.href = 'https://wa.me/558487149954?text=Olá%2C%20quero%20escalar%20minha%20operação%20com%20vocês%21';
     }
+    
+    // Redirect to Thank You page
+    navigate('/obrigado');
   };
 
   const updateField = (field: string, value: string) => {
@@ -282,7 +282,7 @@ const Index = () => {
                 type="submit"
                 className="w-full h-14 text-lg font-bold bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 hover-glow transition-all text-primary-foreground shadow-lg md:relative md:bottom-auto fixed bottom-0 left-0 right-0 md:rounded-xl rounded-none z-50"
               >
-                Enviar para WhatsApp
+                ENVIAR FORMULÁRIO
               </Button>
             </form>
           </div>
